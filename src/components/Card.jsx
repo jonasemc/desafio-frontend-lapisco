@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./styles.css";
 
 function Card(props) {
@@ -7,15 +7,19 @@ function Card(props) {
   return (
     <>
       <div className="card_container">
-        <img className="card_avatar" src={carta.picture.medium} />
-        <span className="card_nome">
-          {carta.name.first + " " + carta.name.last}
-        </span>
-        <span className="card_genero-idade">
-          {carta.gender + " - " + carta.dob.age + " anos"}
-        </span>
-        <span className="card_numero">{carta.cell}</span>
-        <span className="card_email">{carta.email}</span>
+        <div className="card_avatar">
+          <img src={carta.picture.medium} />
+        </div>
+        <div className="card_container-info">
+          <span className="card_nome">
+            {carta.name.first + " " + carta.name.last}
+          </span>
+          <span className="card_genero-idade">
+            {carta.gender + " - " + carta.dob.age + " anos"}
+          </span>
+          <span className="card_numero">{carta.cell}</span>
+          <span className="card_email">{carta.email}</span>
+        </div>
       </div>
     </>
   );
